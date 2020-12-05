@@ -8,12 +8,16 @@
 const app = require("express");
 const router = app.Router();
 const loginValid = require("../service/LoginService");
+const { setCurrentTime } = require("../utils/setCurrentTime");
 router.get("/login-valid", async (req, res) => {
   const { username, password } = req.query;
   // 设置cookie的key 及 value,并设置httpOnly
   res.cookie("username", username, {
     // 只允许后端修改
     httpOnly: true,
+    // 设置 expires 必须设置maxAge
+    expires: setCurrentTime(),
+    maxAge: new Date(setCurrentTime()).getTime(),
   });
   let loginResult = await loginValid.login(username, password);
   res.json({
