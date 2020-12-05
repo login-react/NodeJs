@@ -10,7 +10,6 @@ const router = app.Router();
 const loginValid = require("../service/LoginService");
 router.get("/login-valid", async (req, res) => {
   const { username, password } = req.query;
-  console.log("req.cookie :>> ", req.cookie);
   // 设置cookie的key 及 value,并设置httpOnly
   res.cookie("username", username, {
     // 只允许后端修改
