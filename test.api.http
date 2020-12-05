@@ -1,0 +1,5 @@
+@url="http://localhost:9999"
+
+# @json=Content-Type: application/json
+
+get {{url}}/user/list

@@ -4,13 +4,13 @@ const coon = mysql.createConnection({
   user: "root",
   password: "12345678",
   port: 3306,
-  database: "docs",
+  database: "boblog",
 });
 coon.connect();
 
 function exec(sql) {
   const promise = new Promise((resolve, reject) => {
-    coon.query("select * from  artcle", (err, result) => {
+    coon.query(sql, (err, result) => {
       if (err) {
         reject(err);
       }
