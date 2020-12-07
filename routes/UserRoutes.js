@@ -3,7 +3,8 @@ const router = app.Router();
 const { exec } = require("../db/mysql");
 router.get("/list", (req, res) => {
   const { name } = req.query;
-  const sql = `select * from admin where nickname like '%${name}%'`;
+  // where nickname like '%${name}%'
+  const sql = `select * from Users `;
   exec(sql)
     .then((result) => {
       return res.json({

@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "bignumber.js": "^9.0.0",
+    "colors-console": "^1.0.3",
     "core-util-is": "^1.0.2",
     "express": "^4.17.1",
     "inherits": "^2.0.4",
