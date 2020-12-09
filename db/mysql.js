@@ -4,7 +4,7 @@ const coon = mysql.createConnection({
   user: "root",
   password: "12345678",
   port: 3306,
-  database: "boblog",
+  database: "Blog",
 });
 coon.connect();
 

@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "bignumber.js": "^9.0.0",
+    "body-parser": "^1.19.0",
     "colors-console": "^1.0.3",
     "core-util-is": "^1.0.2",
     "express": "^4.17.1",
@@ -13,10 +14,13 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
     "process-nextick-args": "^2.0.1",
     "readable-stream": "^2.3.7",
     "safe-buffer": "^5.1.2",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0",
     "sqlstring": "^2.3.1",
     "string_decoder": "^1.1.1",
     "util-deprecate": "^1.0.2"
