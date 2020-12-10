@@ -5,7 +5,7 @@ const UserService = require("../service/UserService");
 router.get("/goodLists", (req, res) => {
   const { name } = req.query;
   // where nickname like '%${name}%'
-  const sql = `select * from Goods`;
+  const sql = `select * from uniGoods`;
   exec(sql)
     .then((result) => {
       return res.json({
