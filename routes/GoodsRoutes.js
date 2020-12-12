@@ -1,11 +1,16 @@
 const app = require("express");
 const router = app.Router();
 const { exec } = require("../db/mysql");
-const UserService = require("../service/UserService");
+const GoodsService = require("../service/GoodsService");
 router.get("/goodLists", (req, res) => {
-  const { name } = req.query;
+  let sql = "";
+  const { love } = req.query;
   // where nickname like '%${name}%'
-  const sql = `select * from uniGoods`;
+  if (!love) {
+    sql = `select * from uniGoods`;
+  } else {
+    sql = `select * from uniGoods where love=${love}`;
+  }
   exec(sql)
     .then((result) => {
       return res.json({
@@ -19,6 +24,22 @@ router.get("/goodLists", (req, res) => {
         result: err,
       });
     });
+});
+
+router.put("/updateGoods", async (req, res) => {
+  let result = await GoodsService.updateGoods(req.body);
+  res.json({
+    msg: "sdfsadf",
+    result,
+  });
+});
+
+router.post("/seachGoods", async (req, res) => {
+  let result = await GoodsService.findById(req.body);
+  res.json({
+    msg: "查询成功",
+    result,
+  });
 });
 
 module.exports = router;

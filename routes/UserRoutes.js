@@ -31,4 +31,27 @@ router.post("/addUser", async (req, res) => {
     result,
   });
 });
+
+/**
+ * 获取验证码
+ */
+router.get("/getValidCode", (req, res) => {
+  let code = UserService.getValidCode();
+  res.json({
+    msg: "获取验证成功",
+    code,
+  });
+});
+
+/**
+ * 用户登录
+ */
+router.post("/uniLogin", async (req, res) => {
+  let result = await UserService.uniUserLogin(req.body);
+  res.json({
+    msg: "登录成功",
+    code: 1000,
+    result,
+  });
+});
 module.exports = router;
