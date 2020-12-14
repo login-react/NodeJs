@@ -15,11 +15,16 @@ router.get("/goodLists", (req, res) => {
     .then((result) => {
       return res.json({
         msg: "查询成功",
-        result,
+        result: result.map((item) => {
+          return {
+            ...item,
+            path: `https://${item.path}`,
+          };
+        }),
       });
     })
     .catch((err) => {
-      return res.json({
+      return res.status(500).json({
         msg: "查询失败",
         result: err,
       });
@@ -36,6 +41,7 @@ router.put("/updateGoods", async (req, res) => {
 
 router.post("/seachGoods", async (req, res) => {
   let result = await GoodsService.findById(req.body);
+  console.log("result :>> ", result);
   res.json({
     msg: "查询成功",
     result,

@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Yingying147258",
-    "database": "docs",
-    "host": "119.45.228.169",
+    "password": "12345678",
+    "database": "boblog",
+    "host": "localhost",
     "dialect": "mysql",
-    "port": "1298"
+    "port": "3306"
   },
   "test": {
     "username": "root",
