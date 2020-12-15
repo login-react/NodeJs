@@ -12,7 +12,7 @@ router.post("/createCar", async (req, res) => {
 });
 
 router.post("/findAllShopCar", async (req, res) => {
-  let result = await ShopCarService.findAll();
+  let result = await ShopCarService.findAllShopCar(req.body);
   console.log("result :>> ", result);
   res.json({
     msg: "查询成功",

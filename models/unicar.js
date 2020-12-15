@@ -20,11 +20,15 @@ module.exports = (sequelize, DataTypes) => {
       count: DataTypes.INTEGER,
       goodsId: DataTypes.INTEGER,
       isChecked: DataTypes.BOOLEAN,
+      uniUserId: DataTypes.INTEGER,
     },
     {
       sequelize,
       modelName: "uniCar",
     }
   );
+  uniCar.associate = function (models) {
+    models.uniCar.belongsTo(models.uniUser);
+  };
   return uniCar;
 };

@@ -34,5 +34,8 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "uniUser",
     }
   );
+  uniUser.associate = function (models) {
+    models.uniUser.hasMany(models.uniCar);
+  };
   return uniUser;
 };

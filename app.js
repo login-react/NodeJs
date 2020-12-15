@@ -18,6 +18,7 @@ const userRoute = require("./routes/UserRoutes");
 const loginRoute = require("./routes/LoginRoutes");
 const goodsRoute = require("./routes/GoodsRoutes");
 const shopCarRoute = require("./routes/ShopCar");
+const versionRoute = require("./routes/VersionRoute");
 const fileReadRoute = require("./routes/FileRoutes");
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json());
@@ -26,7 +27,7 @@ app.use("/login", loginRoute);
 app.use("/file", fileReadRoute);
 app.use("/goods", goodsRoute);
 app.use("/shopCar", shopCarRoute);
-
+app.use("/version", versionRoute);
 app.listen(port, () =>
   console.log("⛑⛑⛑⛑", colors("red", `express port ${port}已经开启成功...`))
 );

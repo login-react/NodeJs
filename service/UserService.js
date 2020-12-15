@@ -24,5 +24,10 @@ class UserService {
       nickName,
     });
   }
+  async getByUserId(body) {
+    const { id } = body;
+    console.log("id :>> ", id);
+    return await userModal.uniUser.findAll({ where: { id } });
+  }
 }
 module.exports = new UserService();

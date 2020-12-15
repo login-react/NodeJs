@@ -27,7 +27,7 @@ router.post("/addUser", async (req, res) => {
   console.log("req.body :>> ", req.body);
   let result = await UserService.AddUser(req.body);
   res.json({
-    msg: "sdfsadf",
+    msg: "用户新增成功",
     result,
   });
 });
@@ -51,6 +51,14 @@ router.post("/uniLogin", async (req, res) => {
   res.json({
     msg: "登录成功",
     code: 1000,
+    result,
+  });
+});
+
+router.get("/userFindById", async (req, res) => {
+  let result = await UserService.getByUserId(req.query);
+  res.json({
+    msg: "查询用户成功",
     result,
   });
 });
