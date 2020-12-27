@@ -1,5 +1,10 @@
-const express = require("express");
-const app = express();
+const app = require("express")();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+console.log('---');
+io.on("connection", (socket) => {
+  console.log("===>>>>>>>> connection successful ...");
+});
 const colors = require("colors-console");
 const bodyParse = require("body-parser");
 app.all("*", function (req, res, next) {
@@ -28,6 +33,6 @@ app.use("/file", fileReadRoute);
 app.use("/goods", goodsRoute);
 app.use("/shopCar", shopCarRoute);
 app.use("/version", versionRoute);
-app.listen(port, () =>
+http.listen(port, () =>
   console.log("⛑⛑⛑⛑", colors("red", `express port ${port}已经开启成功...`))
 );
