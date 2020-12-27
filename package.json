@@ -23,7 +23,7 @@
     "safe-buffer": "^5.1.2",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
-    "socket.io": "^3.0.4",
+    "socket.io": "^2.3.0",
     "socket.io-client-uni-app": "^1.4.0",
     "sqlstring": "^2.3.1",
     "string_decoder": "^1.1.1",

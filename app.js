@@ -2,9 +2,15 @@ const app = require("express")();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 console.log('---');
-io.on("connection", (socket) => {
-  console.log("===>>>>>>>> connection successful ...");
-});
+require('./socket')(io)
+// io.on("connection",function(socket){
+//   // console.log('========info',socket)
+//   socket.on("testInfo", val => {
+//     console.log('val :>> ', val);
+//   });
+// });
+
+
 const colors = require("colors-console");
 const bodyParse = require("body-parser");
 app.all("*", function (req, res, next) {
