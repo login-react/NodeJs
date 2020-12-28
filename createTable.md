@@ -12,4 +12,8 @@ account,
 npx sequelize-cli model:generate --name uniCar --attributes goodsName:string,account:integer,goodsImg:string,descirle:string,count:integer,goodsId:integer
 npx sequelize-cli model:generate --name uniVersion --attributes goodsName:integer
 
+## 聊天
+
+npx sequelize-cli model:generate --name uni-chat --attributes content:string,avator:string
+
 npx sequelize-cli db:migrate --env=development
