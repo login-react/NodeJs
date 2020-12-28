@@ -14,6 +14,6 @@ npx sequelize-cli model:generate --name uniVersion --attributes goodsName:intege
 
 ## 聊天
 
-npx sequelize-cli model:generate --name uni-chat --attributes content:string,avator:string
+npx sequelize-cli model:generate --name uniChat --attributes content:string,avator:string,nickName:string
 
 npx sequelize-cli db:migrate --env=development

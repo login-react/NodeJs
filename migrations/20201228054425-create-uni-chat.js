@@ -1,33 +1,33 @@
-"use strict";
+'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("uniChats", {
+    await queryInterface.createTable('uniChats', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       content: {
-        type: Sequelize.STRING,
-      },
-      nickName: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       avator: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
+      },
+      nickName: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("uniChats");
-  },
+    await queryInterface.dropTable('uniChats');
+  }
 };
