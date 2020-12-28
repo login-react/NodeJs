@@ -10,8 +10,7 @@ class ShopCarService {
   }
   // 购物车 新添加的 排序在前面
   // 一对多  且 多个购物车的内容按时间排序
-  async findAllShopCar(body) {
-    const { id } = body;
+  async findAllShopCar(id) {
     return await shopCarModal.uniUser.findAll({
       where: { id },
       order: [[shopCarModal.uniCar, "createdAt", "DESC"]],

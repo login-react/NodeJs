@@ -1,14 +1,7 @@
 const app = require("express")();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
-console.log("---");
 require("./socket")(io);
-// io.on("connection",function(socket){
-//   // console.log('========info',socket)
-//   socket.on("testInfo", val => {
-//     console.log('val :>> ', val);
-//   });
-// });
 
 const colors = require("colors-console");
 const bodyParse = require("body-parser");
@@ -41,5 +34,5 @@ app.use("/shopCar", shopCarRoute);
 app.use("/version", versionRoute);
 app.use("/chat", chatsRoute);
 http.listen(port, () =>
-  console.log("⛑⛑⛑⛑", colors("red", `express port ${port}已经开启成功...`))
+  console.log("🙇‍♀️ *** 🙇‍♀️", colors("red", `express port ${port}已经开启成功...`))
 );

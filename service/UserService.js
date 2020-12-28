@@ -26,7 +26,6 @@ class UserService {
   }
   async getByUserId(body) {
     const { id } = body;
-    console.log("id :>> ", id);
     return await userModal.uniUser.findAll({ where: { id } });
   }
 }
