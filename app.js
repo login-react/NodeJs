@@ -24,6 +24,7 @@ const shopCarRoute = require("./routes/ShopCar");
 const versionRoute = require("./routes/VersionRoute");
 const fileReadRoute = require("./routes/FileRoutes");
 const chatsRoute = require("./routes/ChatsRoutes");
+const iframeRoute = require('./routes/iframeRoutes');
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json());
 app.use("/user", userRoute);
@@ -33,6 +34,7 @@ app.use("/goods", goodsRoute);
 app.use("/shopCar", shopCarRoute);
 app.use("/version", versionRoute);
 app.use("/chat", chatsRoute);
+app.use('/iframe', iframeRoute);
 http.listen(port, () =>
   console.log("🙇‍♀️ *** 🙇‍♀️", colors("red", `express port ${port}已经开启成功...`))
 );
